@@ -15,6 +15,7 @@ int currentIndex = 0;
 class _OnBoardingBodyState extends State<OnBoardingBody> {
   @override
   Widget build(BuildContext context) {
+    final PageController pageController = PageController();
     List<String> photo = [
       'assets/images/onboarding1.jpg',
       'assets/images/onboarding2.jpg',
@@ -26,6 +27,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
       'Wait your order & enjoy it in home',
     ];
     return PageView.builder(
+      controller: pageController,
       itemCount: photo.length,
       onPageChanged: (int index) {
         setState(() {
@@ -59,7 +61,9 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                   ),
                 ),
                 const Spacer(),
-                const ArrowForwardButton()
+                ArrowForwardButton(
+                  pageController: pageController,
+                )
               ],
             ),
           if (currentIndex == 2) const GetStartedButton()
