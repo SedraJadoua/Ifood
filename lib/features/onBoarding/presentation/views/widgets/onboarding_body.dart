@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:foody_app/core/utils/assets.dart';
+import 'package:foody_app/core/widgets/custom_button.dart';
+import 'package:foody_app/core/widgets/text_button_widget.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/arrow_forward_buttotn.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/custom_container.dart';
-import 'package:foody_app/features/onBoarding/presentation/views/widgets/get_started_button.dart';
 
 import '../../../../../constants.dart';
 import '../../../../../core/utils/styles.dart';
@@ -49,19 +50,14 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28),
-                  child: TextButton(
+                  padding: const EdgeInsets.only(left: 28),
+                  child: TextButtonWidget(
+                    text: 'Skip',
                     onPressed: () {
                       Navigator.of(context).pushReplacement(MaterialPageRoute(
                         builder: (context) => const LoginView(),
                       ));
                     },
-                    child: Text(
-                      'Skip',
-                      style: Styles.style16.copyWith(
-                        color: kSecondaryColor,
-                      ),
-                    ),
                   ),
                 ),
                 const Spacer(),
@@ -70,7 +66,18 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
                 )
               ],
             ),
-          if (currentIndex == 2) const GetStartedButton()
+          if (currentIndex == 2)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 40),
+              child: CustomButton(
+                text: 'Get Started',
+                onPressed: () {
+                  Navigator.of(context).pushReplacement(MaterialPageRoute(
+                    builder: (context) => const LoginView(),
+                  ));
+                },
+              ),
+            )
         ],
       ),
     );

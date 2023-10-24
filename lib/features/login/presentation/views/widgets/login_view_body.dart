@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:foody_app/core/utils/styles.dart';
+import 'package:foody_app/core/widgets/text_button_widget.dart';
+import 'package:foody_app/features/login/presentation/views/widgets/password_text_form_feild.dart';
+import 'package:foody_app/features/login/presentation/views/widgets/remember_me&forget_password.dart';
+import 'package:foody_app/features/login/presentation/views/widgets/username_text_form_feild.dart';
+import 'package:foody_app/features/login/presentation/views/widgets/welcome_text_widget.dart';
 
 import '../../../../../constants.dart';
+import '../../../../../core/widgets/custom_button.dart';
 
 class LoginViewBody extends StatelessWidget {
   const LoginViewBody({super.key});
@@ -18,25 +24,32 @@ class LoginViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Hello, Guest!',
-                  style: Styles.style20,
+                const WelcomeTextWidget(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
-                Row(
-                  children: [
-                    Text(
-                      'Welcome to ',
-                      style: Styles.style20,
-                    ),
-                    Text(
-                      'IFood',
-                      style: Styles.style20.copyWith(color: kPrimaryColor),
-                    )
-                  ],
+                const EmailUsernameTextFormFeild(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03,
                 ),
-                Text(
-                  'Before Continue, Please Sing In First.',
-                  style: Styles.style16,
+                const PasswordTextFormFeild(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.03 ,
+                ),
+                const RememberMeAndForgetPassword(),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.05,
+                ),
+                const CustomButton(
+                  text: 'SIGN IN',
+                  onPressed: null,
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
+                TextButtonWidget(
+                  text: 'Tap here if you do not have an account',
+                  onPressed: () {},
                 )
               ],
             ),
