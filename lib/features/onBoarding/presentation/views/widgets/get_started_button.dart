@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:foody_app/features/login/presentation/views/login_view.dart';
+
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
 
 class GetStartedButton extends StatelessWidget {
   const GetStartedButton({super.key});
@@ -10,19 +14,20 @@ class GetStartedButton extends StatelessWidget {
       width: double.infinity,
       height: MediaQuery.of(context).size.height * 0.08,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          //TODO : what type of naviagtor
+          Navigator.of(context).pushReplacement(MaterialPageRoute(
+            builder: (context) => const LoginView(),
+          ));
+        },
         style: ButtonStyle(
-            shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20))),
-            backgroundColor: const MaterialStatePropertyAll(
-              Color.fromARGB(255, 35, 47, 67),
-            )),
-        child: const Text(
-          'Get Started',
-          style: TextStyle(
-            fontSize: 24,
+          shape: MaterialStatePropertyAll(
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+          backgroundColor: const MaterialStatePropertyAll(
+            kSecondaryColor,
           ),
         ),
+        child: const Text('Get Started', style: Styles.style24,),
       ),
     );
   }

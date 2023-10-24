@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foody_app/core/utils/assets.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/arrow_forward_buttotn.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/custom_container.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/get_started_button.dart';
+
+import '../../../../../constants.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../login/presentation/views/login_view.dart';
 
 class OnBoardingBody extends StatefulWidget {
   const OnBoardingBody({super.key});
@@ -16,11 +21,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
   @override
   Widget build(BuildContext context) {
     final PageController pageController = PageController();
-    List<String> photo = [
-      'assets/images/onboarding1.jpg',
-      'assets/images/onboarding2.jpg',
-      'assets/images/onboarding3.jpg',
-    ];
+
     List<String> text = [
       'Fast delivery at your doorstep',
       'Pick your favourite food and drink',
@@ -28,7 +29,7 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
     ];
     return PageView.builder(
       controller: pageController,
-      itemCount: photo.length,
+      itemCount: AssetData.onBoardingPhotos.length,
       onPageChanged: (int index) {
         setState(() {
           currentIndex = index;
@@ -36,26 +37,29 @@ class _OnBoardingBodyState extends State<OnBoardingBody> {
       },
       itemBuilder: (context, index) => Column(
         children: [
-          Image.asset(photo[index]),
+          Image.asset(AssetData.onBoardingPhotos[index]),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
           ),
-          CustomContainer(photo: photo, index: index, text: text),
+          CustomContainer(index: index, text: text),
           SizedBox(
             height: MediaQuery.of(context).size.height * 0.05,
           ),
-          if (currentIndex + 1 < photo.length)
+          if (currentIndex + 1 < AssetData.onBoardingPhotos.length)
             Row(
               children: [
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 28),
                   child: TextButton(
-                    onPressed: () {},
-                    child: const Text(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => const LoginView(),
+                      ));
+                    },
+                    child: Text(
                       'Skip',
-                      style: TextStyle(
-                        color: Colors.amber,
-                        fontSize: 20,
+                      style: Styles.style16.copyWith(
+                        color: kSecondaryColor,
                       ),
                     ),
                   ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody_app/features/login/presentation/views/login_view.dart';
 import 'package:foody_app/features/splash/presentation/views/splash_view.dart';
 
 void main() {

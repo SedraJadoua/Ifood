@@ -16,7 +16,9 @@ class _TypeWritterTextState extends State<TypeWritterText>
     writeText();
     initAnimation();
     Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) =>const OnBoardingView(),));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+        builder: (context) => const OnBoardingView(),
+      ));
     });
     super.initState();
   }
@@ -41,7 +43,7 @@ class _TypeWritterTextState extends State<TypeWritterText>
     animationController = AnimationController(
         vsync: this,
         duration: const Duration(
-          seconds: 1,
+          milliseconds: 500,
         ));
     animated = Tween<double>(begin: 0.5, end: 1).animate(animationController)
       ..addStatusListener((status) {

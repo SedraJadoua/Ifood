@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:foody_app/core/utils/assets.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/list_to_generate_dots.dart';
 import 'package:foody_app/features/onBoarding/presentation/views/widgets/onboarding_body.dart';
 
+import '../../../../../core/utils/styles.dart';
+
 // ignore: must_be_immutable
 class CustomContainer extends StatelessWidget {
-  CustomContainer({super.key, required this.photo, required this.index , required this.text,});
-  List<String> photo;
+  CustomContainer({
+    super.key,
+    required this.index,
+    required this.text,
+  });
+
   List<String> text;
   int index;
   @override
@@ -22,14 +29,14 @@ class CustomContainer extends StatelessWidget {
         children: [
           ListToGenerateDots(
             currentIndex: currentIndex,
-            photo: photo,
+            photo: AssetData.onBoardingPhotos,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 40, right: 40, top: 40),
             child: Text(
               text[index],
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: Styles.style24,
             ),
           ),
         ],
