@@ -4,6 +4,8 @@ class AssetData {
     'assets/images/onboarding2.jpg',
     'assets/images/onboarding3.jpg',
   ];
+
+  static  String  verifyScreenPhoto = '';
 }
 
 

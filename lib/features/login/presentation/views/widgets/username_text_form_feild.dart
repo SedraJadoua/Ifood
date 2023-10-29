@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../../../core/utils/styles.dart';
+import '../../../../../constants.dart';
 
 class EmailUsernameTextFormFeild extends StatelessWidget {
   const EmailUsernameTextFormFeild(
@@ -17,7 +18,7 @@ class EmailUsernameTextFormFeild extends StatelessWidget {
           fontWeight: FontWeight.normal,
         ),
         focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: kSecondaryColor),
         ),
         filled: true,
         fillColor: Colors.white,
