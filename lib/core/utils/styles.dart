@@ -17,4 +17,14 @@ class Styles {
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
+  static const style26 = TextStyle(
+    fontSize: 26,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const style30 = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    color: Colors.white,
+  );
 }

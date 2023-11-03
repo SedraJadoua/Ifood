@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody_app/features/home/presentation/views/home_view.dart';
 import 'package:foody_app/features/login/presentation/views/login_view.dart';
 import 'package:foody_app/features/register/presentation/views/register_view.dart';
 import 'package:foody_app/features/splash/presentation/views/splash_view.dart';
@@ -16,7 +17,7 @@ class FoodyApp extends StatelessWidget {
     return const SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: VerifyView(),
+        home: HomeView(),
       ),
     );
   }

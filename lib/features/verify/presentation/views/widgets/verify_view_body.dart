@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:foody_app/core/utils/assets.dart';
+
 import 'package:foody_app/core/widgets/welcome_text_widget.dart';
 
 class VerifyViewBody extends StatelessWidget {
